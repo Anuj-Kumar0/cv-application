@@ -1,8 +1,7 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .logo {
@@ -39,4 +38,45 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.data-containers {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f6f8;
+  gap: 40px;
+  margin: 48px;
+}
+
+.data-containers .detail {
+  border: silver;
+  flex: 1;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  padding: 20px;
+}
+
+.data-containers .preview {
+  flex: 2;
+  background-color: #f9fafb;
+  padding: 20px;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.08);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.buttons button {
+  background-color: #007bff;
+  color: white;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+.buttons button:hover {
+  color: black;
 }
