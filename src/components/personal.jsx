@@ -1,8 +1,9 @@
 export function Personal({ data, setData }) {
     function handleChange(e) {
+      const targ = e.target;
       setData({
         ...data,
-        [e.target.name]: e.target.value
+        [targ.name]: targ.value
       });
     }
   
