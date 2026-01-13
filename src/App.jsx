@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import './styles/navbar.css'
+import './styles/education.css'
 import { Personal } from './components/personal.jsx';
 import { Experience } from './components/experience.jsx';
 import { Education } from './components/education.jsx';
@@ -16,8 +17,10 @@ function App() {
     email: '',
     contact: '',
     location: '',
-    github: ''
+    github: '',
   });
+  const [educationData, setEducationData] = useState([]);
+
  
   return (
    <div className='container'>
@@ -36,7 +39,7 @@ function App() {
       {activeSection === 'personal' && <Personal data={personalData} setData={setPersonalData} />}
 
       {activeSection === 'experience' && <Experience />}
-      {activeSection === 'education' && <Education />}
+      {activeSection === 'education' && <Education data={educationData} setData={setEducationData} />}
       {activeSection === 'skills' && <Skills />}
       {activeSection === 'projects' && <Projects />}
       {activeSection === 'achievements' && <Achievements />}
@@ -49,7 +52,17 @@ function App() {
       <p>{personalData.contact}</p>
       <p>{personalData.location}</p>
       <p>{personalData.github}</p>
+
+      {educationData.map((edu, index) => (
+  <div key={index}>
+    <p>{edu.school}</p>
+    <p>{edu.degree}</p>
+    <p>{edu.startDate} - {edu.endDate}</p>
+    <p>{edu.cgpa}</p>
+  </div>
+))}
       </div>
+      
     </div>
 
     <div className="buttons">
