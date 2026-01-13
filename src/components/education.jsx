@@ -49,9 +49,35 @@ export function Education({data, setData}) {
     });
   }
 
+  
+  function handleDelete(index) {
+    setData(prev => prev.filter((currItem, currIndex) => currIndex !== index));
+  }
+
+
   return (
     <div>
       <button onClick={() => setShowForm(true)}>Add Education</button>
+
+      {data.length > 0 && (
+        <div className="education-list">
+          {data.map((edu, index) => (
+            <div key={index} className="education-item">
+              <p><strong>{edu.school}</strong></p>
+              <p>{edu.degree}</p>
+              <p>{edu.startDate} - {edu.endDate}</p>
+              <p>CGPA: {edu.cgpa}</p>
+
+              <button
+                className="delete-btn"
+                onClick={() => handleDelete(index)}
+              >
+                Delete
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
 
       {showForm && (
         <div className="overlay">
