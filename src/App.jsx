@@ -21,7 +21,9 @@ function App() {
   });
   const [educationData, setEducationData] = useState([]);
   const [experienceData, setExperienceData] = useState([]);
-
+  const [skillsData, setSkillsData] = useState([]);
+  const [projectData, setProjectData] = useState([]);
+  const [achievementData, setAchievementData] = useState([]);
  
   return (
    <div className='container'>
@@ -41,9 +43,9 @@ function App() {
 
       {activeSection === 'experience' && <Experience data={experienceData} setData={setExperienceData} />}
       {activeSection === 'education' && <Education data={educationData} setData={setEducationData} />}
-      {activeSection === 'skills' && <Skills />}
-      {activeSection === 'projects' && <Projects />}
-      {activeSection === 'achievements' && <Achievements />}
+      {activeSection === 'skills' && <Skills data={skillsData} setData={setSkillsData} />}
+      {activeSection === 'projects' && <Projects data={projectData} setData={setProjectData} />}
+      {activeSection === 'achievements' && <Achievements data={achievementData} setData={setAchievementData} />}
       </div>
 
       <div className='preview'>
@@ -54,15 +56,24 @@ function App() {
       <p>{personalData.location}</p>
       <p>{personalData.github}</p>
 
-      {educationData.map((edu, index) => (
+      {educationData.length > 0 && (
+        <>
+        <h2>Education</h2>
+         {educationData.map((edu, index) => (
   <div key={index}>
     <p>{edu.school}</p>
     <p>{edu.degree}</p>
     <p>{edu.startDate} - {edu.endDate}</p>
     <p>{edu.cgpa}</p>
   </div>
-))}
+         ))}
+  </>
+      )}
 
+     
+      {experienceData.length > 0 && (
+        <>
+        <h2>Experience</h2>
       {experienceData.map((exp, index) => (
   <div key={index}>
     <p>{exp.company}</p>
@@ -70,7 +81,54 @@ function App() {
     <p>{exp.startDate} - {exp.endDate}</p>
     <p>{exp.jobDescription}</p>
   </div>
-))}
+      ))}
+  </>
+      )}
+
+
+{skillsData.length > 0 && (
+  <>
+    <h2>Skills & Certifications</h2>
+    {skillsData.map((skill, index) => (
+      <div key={index}>
+        <p><strong>{skill.skills}</strong></p>
+        <p>{skill.certificates}</p>
+        <p>{skill.technology}</p>
+        <p>{skill.languages}</p>
+      </div>
+    ))}
+  </>
+)}
+
+{projectData.length > 0 && (
+  <>
+    <h2>Technical Projects</h2>
+    {projectData.map((project, index) => (
+      <div key={index}>
+        <p><strong>{project.name}</strong></p>
+        <p>{project.description}</p>
+        <p><a href={project.link} target="_blank" rel="noopener noreferrer">
+  {project.link}
+</a></p>
+
+      </div>
+    ))}
+  </>
+)}
+
+{achievementData.length > 0 && (
+  <>
+    <h2>Achievements & Awards</h2>
+    {achievementData.map((achieve, index) => (
+      <div key={index}>
+        <p><strong>{achieve.achievement}</strong></p>
+        <p>{achieve.award}</p>
+
+      </div>
+    ))}
+  </>
+)}
+
       </div>
       
     </div>
