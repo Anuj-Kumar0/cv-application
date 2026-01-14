@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import './styles/navbar.css'
-import './styles/education.css'
+import './styles/form.css'
 import { Personal } from './components/personal.jsx';
 import { Experience } from './components/experience.jsx';
 import { Education } from './components/education.jsx';
@@ -20,6 +20,7 @@ function App() {
     github: '',
   });
   const [educationData, setEducationData] = useState([]);
+  const [experienceData, setExperienceData] = useState([]);
 
  
   return (
@@ -38,7 +39,7 @@ function App() {
       <div className='detail'>
       {activeSection === 'personal' && <Personal data={personalData} setData={setPersonalData} />}
 
-      {activeSection === 'experience' && <Experience />}
+      {activeSection === 'experience' && <Experience data={experienceData} setData={setExperienceData} />}
       {activeSection === 'education' && <Education data={educationData} setData={setEducationData} />}
       {activeSection === 'skills' && <Skills />}
       {activeSection === 'projects' && <Projects />}
@@ -59,6 +60,15 @@ function App() {
     <p>{edu.degree}</p>
     <p>{edu.startDate} - {edu.endDate}</p>
     <p>{edu.cgpa}</p>
+  </div>
+))}
+
+      {experienceData.map((exp, index) => (
+  <div key={index}>
+    <p>{exp.company}</p>
+    <p>{exp.jobTitle}</p>
+    <p>{exp.startDate} - {exp.endDate}</p>
+    <p>{exp.jobDescription}</p>
   </div>
 ))}
       </div>
