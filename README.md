@@ -75,4 +75,4 @@ a)Better preview styling (resume-like layout)
 b)Edit individual entries
 c)Drag-and-drop section ordering
 d)Mobile responsiveness
-e)Form validation improvements
+e)Form validation improvements.
