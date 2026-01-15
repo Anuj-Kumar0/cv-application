@@ -21,16 +21,18 @@ export function Personal({ data, setData }) {
   }
   
 
-function Input({ label, name, value, onChange }) {
+  function Input({ label, name, value, onChange }) {
     return (
-      <label>
-        {label}
-        {' '}
+      <div className="form-group">
+        <label htmlFor={name}>{label} {' '}</label>
         <input
+          id={name}
           name={name}
           value={value}
           onChange={onChange}
+          type="text"
         />
-      </label>
+      </div>
     );
   }
+  

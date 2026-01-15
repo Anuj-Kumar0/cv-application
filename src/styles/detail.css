@@ -1,0 +1,52 @@
+/* ===== DETAIL PANEL ===== */
+.data-containers .detail {
+  flex: 1;
+  background-color: #ffffff;
+  border-radius: 6px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Section titles */
+.detail h2 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+/* Buttons */
+.detail button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.detail button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Delete buttons */
+.delete-btn {
+  background-color: #ef4444 !important;
+  margin-top: 8px;
+}
+
+.delete-btn:hover {
+  background-color: #dc2626 !important;
+}
+
+/* Lists inside detail */
+.experience-item,
+.education-item,
+.skill-item {
+  border: 1px solid #e5e7eb;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  background-color: #f9fafb;
+}

@@ -2,6 +2,8 @@ import { useState } from 'react'
 import './App.css'
 import './styles/navbar.css'
 import './styles/form.css'
+import './styles/preview.css'
+import './styles/detail.css'
 import { Personal } from './components/personal.jsx';
 import { Experience } from './components/experience.jsx';
 import { Education } from './components/education.jsx';
@@ -49,12 +51,11 @@ function App() {
       </div>
 
       <div className='preview'>
-      <h3>Preview</h3>
       <p>{personalData.fullName}</p>
       <p>{personalData.email}</p>
       <p>{personalData.contact}</p>
       <p>{personalData.location}</p>
-      <p>{personalData.github}</p>
+      <p><a href={personalData.github}>{personalData.github}</a></p>
 
       {educationData.length > 0 && (
         <>
