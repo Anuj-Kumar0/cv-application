@@ -1,3 +1,5 @@
+Live Link: https://cv-applicati.netlify.app/
+
 CV Generator (React)
 
 A dynamic CV / Resume Generator built using React + Vite, allowing users to enter their information section by section and instantly preview a professional resume layout. The project focuses on React fundamentals such as state management, controlled components, conditional rendering, and list handling.
@@ -76,3 +78,5 @@ b)Edit individual entries
 c)Drag-and-drop section ordering
 d)Mobile responsiveness
 e)Form validation improvements.
+
+Live Link: https://cv-applicati.netlify.app/
