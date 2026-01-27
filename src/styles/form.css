@@ -1,102 +1,88 @@
+/*MODAL OVERLAY*/
 .overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
   display: flex;
-  justify-content: center;
   align-items: center;
-  z-index: 999;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+  z-index: 1000;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/*MODAL*/
 .modal {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  width: 300px;
+  background: #ffffff;
+  padding: 28px;
+  width: 340px;
+  border-radius: 10px;
   position: relative;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: scaleUp 0.3s ease;
 }
 
+@keyframes scaleUp {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/*CLOSE BUTTON */
 .close-btn {
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: transparent;
   border: none;
-  background: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-.modal input {
-  display: block;
-  width: 100%;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-}
-
-.modal button[type="submit"] {
-  width: 100%;
-  padding: 0.5rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.modal button[type="submit"]:hover {
-  background-color: #0056b3;
-}
-
-.date-fields {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.date-fields input {
-  flex: 1;
-}
-/* ===== PERSONAL DETAILS FORM ===== */
-
-.detail h2 {
-  margin-bottom: 20px;
   font-size: 20px;
+  color: #6b7280;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  padding: 0; 
+}
+
+.close-btn:hover {
+  background: #f3f4f6;
+  transform: rotate(90deg);
   color: #111827;
 }
 
-/* Input wrapper */
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 18px;
-}
-
-/* Label */
-.form-group label {
-  font-size: 13px;
-  font-weight: 600;
-  color: #374151;
-  margin-bottom: 6px;
-}
-
-/* Input field */
-.form-group input {
-  padding: 10px 12px;
-  font-size: 14px;
+/*Inputs*/
+.modal input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 14px;
   border-radius: 6px;
   border: 1px solid #d1d5db;
-  background-color: #f9fafb;
-  transition: border 0.2s, box-shadow 0.2s;
 }
 
-/* Focus state */
-.form-group input:focus {
-  outline: none;
-  border-color: #2563eb;
-  background-color: #ffffff;
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+/*Submit*/
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #1d4ed8;
 }

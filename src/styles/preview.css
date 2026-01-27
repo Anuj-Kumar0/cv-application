@@ -1,75 +1,76 @@
-/* ===== PREVIEW (Resume Style) ===== */
 .preview {
-  background-color: #ffffff;
-  padding: 40px;
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
-  color: #1f2937;
-  line-height: 1.6;
-  border-radius: 6px;
+  background: #ffffff;
+  padding: 48px 56px;
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  color: #111827;
+  line-height: 1.65;
+  border-radius: 8px;
 }
 
-/* Name */
+/*Name*/
 .preview > p:first-child {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 8px;
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
 }
 
-/* Contact info */
+/*Contact line*/
 .preview > p:nth-child(2),
 .preview > p:nth-child(3),
 .preview > p:nth-child(4),
 .preview > p:nth-child(5) {
   font-size: 14px;
-  margin: 2px 0;
-  color: #374151;
+  color: #4b5563;
 }
 
-/* Github link */
+/*GitHub*/
 .preview a {
   color: #2563eb;
+  font-weight: 500;
   text-decoration: none;
-  font-size: 14px;
 }
-
 .preview a:hover {
   text-decoration: underline;
 }
 
-/* Section headers */
+/*Section headers*/
 .preview h2 {
-  margin-top: 28px;
-  margin-bottom: 12px;
+  margin-top: 32px;
+  margin-bottom: 14px;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #1f2937;
   border-bottom: 2px solid #e5e7eb;
-  padding-bottom: 4px;
-  color: #111827;
+  padding-bottom: 6px;
 }
 
-/* Section entries */
+/*Entries*/
 .preview div {
   margin-bottom: 14px;
 }
 
-/* Titles (company, school, project name) */
+/*Titles*/
 .preview strong {
   font-size: 15px;
+  font-weight: 600;
   color: #111827;
 }
 
-/* Dates */
+/*Text*/
 .preview p {
   margin: 2px 0;
   font-size: 14px;
+  color: #374151;
 }
 
-/* Job / project description */
+/*Description*/
 .preview p:last-child {
   color: #4b5563;
 }
 
-/* Print optimization */
 @media print {
   body {
     background: white;
@@ -82,7 +83,7 @@
   }
 
   .preview {
-    box-shadow: none;
     padding: 0;
+    box-shadow: none;
   }
 }
